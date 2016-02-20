@@ -14,11 +14,19 @@ function! KeyLO(modes, current_layout, ...)
 
 	" LAYOUTS
 	let l:presets = {
+		\'qwerty_uk'	: "-_=+qQwWeErRtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:'@zZvVcCvVbBnNmM,<.>/?",
+		\'qwerty_us'	: "-_=+qQwWeErRtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:'\"zZxXcCvVbBnNmM,<.>/?",
 		\'colemak_uk'	: "-_=+qQwWfFpPgGjJlLuUyY;:[{]}aArRsStTdDhHnNeEiIoO'@zZxXcCvVbBkKmM,<.>/?",
 		\'colemak_us'	: "-_=+qQwWfFpPgGjJlLuUyY;:[{]{aArRsStTdDhHnNeEiIoO'\"zZvVcCvVbBkKmM,<.>/?",
 		\'dvorak'		: "[{]}'\",<.>pPyYfFgGcCrRlL/?=+aAoOeEuUiIdDhHtTnNsS-_;:qQjJkKxXbBmMwWvVzZ",
-		\'qwerty_uk'	: "-_=+qQwWeErRtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:'@zZvVcCvVbBnNmM,<.>/?",
-		\'qwerty_us'	: "-_=+qQwWeErRtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:'\"zZxXcCvVbBnNmM,<.>/?",
+		\'tarmak1_uk'	: "-_=+qQwWjJrRtTyYuUiIoOpP[{]}aAsSdDfFgGhHnNeElL;:'@zZxXcCvVbBkKmM,<.>/?",
+		\'tarmak1_us'	: "-_=+qQwWjJrRtTyYuUiIoOpP[{]}aAsSdDfFgGhHnNeElL;:'\"zZxXcCvVbBkKmM,<.>/?",
+		\'tarmak2_uk'	: "-_=+qQwWfFrRgGyYuUiIoOpP[{]}aAsSdDtTjJhHnNeElL;:'@zZxXcCvVbBkKmM,<.>/?",
+		\'tarmak2_us'	: "-_=+qQwWfFrRgGyYuUiIoOpP[{]}aAsSdDtTjJhHnNeElL;:'\"zZxXcCvVbBkKmM,<.>/?",
+		\'tarmak3_uk'	: "-_=+qQwWfFjJgGyYuUiIoOpP[{]}aArRsStTdDhHnNeElL;:'@zZxXcCvVbBkKmM,<.>/?",
+		\'tarmak3_us'	: "-_=+qQwWfFjJgGyYuUiIoOpP[{]}aArRsStTdDhHnNeElL;:'\"zZxXcCvVbBkKmM,<.>/?",
+		\'tarmak4_uk'	: "-_=+qQwWfFpPgGjJuUiIyY;:[{]}aArRsStTdDhHnNeElLoO'@zZxXcCvVbBkKmM,<.>/?",
+		\'tarmak4_us'	: "-_=+qQwWfFpPgGjJuUiIyY;:[{]}aArRsStTdDhHnNeElLoO'\"zZxXcCvVbBkKmM,<.>/?",
 		\'numbers'		: '1234567890',
 		\'symbols_uk'	: '!"£$%^&*()',
 		\'symbols_us'	: '!@#$%^&*()',
