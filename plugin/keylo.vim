@@ -1,4 +1,17 @@
 function! KeyLO(modes, current_layout, ...)
+	" map/noremap
+	if a:0 > 1 
+		if a:2 ==# 'map'
+			let l:map = 1
+			echom 'KeyLO: Using "map" rather than "noremap", be careful!'
+		else
+			echom 'KeyLO: map argument "'.a:2.'" not valid, should be "map" or empty'
+			return
+		endif
+	else
+		let l:map = 0
+	endif
+
 	" MODES
 	if a:modes =~ '[^acilnosvx ]'
 		echom 'KeyLO: invalid modes argument, can only contain characters [acilnosvx<space>]'
@@ -42,7 +55,7 @@ function! KeyLO(modes, current_layout, ...)
 
 	" If a 3rd arg given, prepare to use as new layout to swap current one for.
 	" Otherwise, prepare to unset any mappings from the current layout
-	if a:0 ==# 1
+	if a:0 > 0
 		let l:new_layout = a:1
 		for l:key in keys(l:presets)
 			if l:new_layout ==? l:key
@@ -74,7 +87,9 @@ function! KeyLO(modes, current_layout, ...)
 
 		let l:i = 0
 		while l:i < len(l:current_layout_keys)
-			if l:remap ==# 1
+			if l:map ==# 1
+				execute ':'.l:mode.'map '.l:current_layout_keys[l:i].' '.l:new_layout_keys[l:i]
+			elseif l:remap ==# 1
 				execute ':'.l:mode.'noremap '.l:current_layout_keys[l:i].' '.l:new_layout_keys[l:i]
 			else
 				execute ':'.l:mode.'unmap '.l:current_layout_keys[l:i]
