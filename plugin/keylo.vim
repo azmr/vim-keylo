@@ -1,5 +1,5 @@
 function! KeyLO(modes, current_layout, ...)
-	" MODES
+	" MODES - corresponds to vim's xmap, nmap etc
 	if a:modes =~ '[^acilnosvx ]'
 		echom 'KeyLO: invalid modes argument, can only contain characters [acilnosvx<space>]'
 		return
